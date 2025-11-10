@@ -175,7 +175,7 @@ const TreeSelect: React.FC<React.PropsWithChildren<TreeSelectProps<any>>> =
         if (item?.[valueKey] === value) {
           return item?.label ?? item[treeNodeLabelProp as string]
         } else {
-          const childLabel = findLabel(value, item?.children, treeNodeLabelProp)
+          const childLabel = findLabel(value, item?.children, item?.label ?? treeNodeLabelProp as string)
           if (childLabel) return childLabel
         }
       }
